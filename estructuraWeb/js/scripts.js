@@ -11,7 +11,7 @@ y mostrarlos en la consola uno a uno
 todos los nombres
 */
 
-const grupo = [{
+let grupo = [{
     nombre: "Jesus",
     apellido: "rojas"
 }, {
@@ -44,9 +44,14 @@ const grupo = [{
 },
 ]
 
-function imprimirNombres(){
+function listaNombres(){
 
-    console.log(grupo)
+    let lista = document.getElementById("lista");
+    lista.innerHTML = "";
+
+    for( let i = 0; i < grupo.length; i++ ){
+        let li = document.createElement("li");
+        li.textContent = grupo[i].nombre + " " + grupo[i].apellido;
+        lista.appendChild(li);
+    }
 }
-
-imprimirNombres()
